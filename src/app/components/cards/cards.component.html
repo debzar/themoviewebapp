@@ -1,0 +1,11 @@
+<div class="card-columns m-5 animated fadeIn">
+  <div (click)="watchMovie(item)" *ngFor="let item of items" class="card puntero">
+    <img class="card-img-top" [src]="item | movieImage" alt="Card image cap" />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.title }}</h5>
+      <p class="card-text">
+        Pruebas
+      </p>
+    </div>
+  </div>
+</div>
