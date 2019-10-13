@@ -7,7 +7,7 @@ import { MovieService } from '../../services/movie.service';
 })
 export class HomeComponent {
 
-  nuevasPeliculas: any[] = [];
+  newMovies: any[] = [];
   loading: boolean;
 
   constructor(private movie: MovieService) {
@@ -18,7 +18,7 @@ export class HomeComponent {
       .subscribe((data: any) => {
 
         console.log(data);
-        this.nuevasPeliculas = data;
+        this.newMovies = data;
         this.loading = false;
       });
 

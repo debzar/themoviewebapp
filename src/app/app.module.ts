@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { MovieImagePipe } from './pipes/movie-image.pipe';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -21,11 +22,11 @@ import { MovieImagePipe } from './pipes/movie-image.pipe';
     HomeComponent,
     CardsComponent,
     LoadingComponent,
-    MovieImagePipe
+    MovieImagePipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
-    //AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
