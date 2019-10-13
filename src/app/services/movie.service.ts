@@ -36,7 +36,9 @@ export class MovieService {
   }
 
   getMovieSearch(term: string) {
-      return this.getQuery(`/search/movie?query=${term}&sort_by=popularity.desc`).pipe(map((data: any) => data.results));
+    return this.getQuery(
+      `/search/movie?query=${term}&sort_by=popularity.desc`
+    ).pipe(map((data: any) => data.results));
   }
 
   getMovie(id: string) {
