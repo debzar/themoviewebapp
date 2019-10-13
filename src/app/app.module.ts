@@ -9,7 +9,6 @@ import { ROUTES } from './app-routing.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { MovieImagePipe } from './pipes/movie-image.pipe';
@@ -20,7 +19,6 @@ import { MovieComponent } from './components/movie/movie.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     CardsComponent,
     LoadingComponent,
     MovieImagePipe,
