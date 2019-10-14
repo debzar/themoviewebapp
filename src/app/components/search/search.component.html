@@ -12,25 +12,17 @@
               </select>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-2">
-            <div class="input-view-flat date input-group" data-toggle="datetimepicker" data-target="#release-year-field">
-              <input class="datetimepicker-input form-control" id="release-year-field" name="releaseYear" type="text" placeholder="release year" data-target="#release-year-field" data-date-format="Y" />
-              <div class="input-group-append">
-                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-              </div>
-            </div>
-          </div>
           <div class="col-sm-6 col-lg-4">
             <div class="input-view-flat input-group">
               <div class="col-sm-6">
-                <input type="number"  value="0" pattern="[0-9]"id="minVote"  (keyup)="getMovieVotes()"  class="form-control"  placeholder="Voto mayor a"  #minVote/>
+                <input type="number" min="0" pattern="[0-9]" id="minVote"  (keyup)="getMovieVotes()"  class="form-control"  placeholder="Voto mayor a"  #minVote/>
               </div>
               <div class="col-sm-6">
-                <input type="number"  value="10" pattern="[0-9]"id="maxVote" (keyup)="getMovieVotes()"  class="form-control"  placeholder="Voto menor que"  #maxVote/>
+                <input type="number"  max="10" pattern="[0-9]" id="maxVote" (keyup)="getMovieVotes()"  class="form-control"  placeholder="Voto menor que"  #maxVote/>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4">
+          <div class="col-sm-6 col-lg-6">
             <input #term type="text" (keyup)="search(term.value)"  class="form-control"  placeholder="Buscar"/>
           </div>
 
