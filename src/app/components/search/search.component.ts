@@ -11,6 +11,7 @@ export class SearchComponent implements OnInit {
   genres: any[] = [];
   @Input() items: any[] = [];
   loading: boolean;
+  movieselect = '';
 
   constructor(private movie: MovieService) {}
 
@@ -18,6 +19,7 @@ export class SearchComponent implements OnInit {
     this.getDiscoverMovies();
     this.getGenres();
   }
+
 
   getDiscoverMovies(): void {
     this.movie.getDiscoverMovies().subscribe((data: any) => {
@@ -35,14 +37,18 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  getMoviesGenre(term: string) {
+  selectChangeHandler(event: any) {
+    // update the ui
+    this.movieselect = event.target.value;
+    // llamar al servicio y actualizar modelo
+    console.log('categoria: ' + this.movieselect);
+    this.getMovieGenre(this.movieselect.toString());
+  }
+  getMovieGenre(term: string) {
     if (term) {
       this.loading = true;
-      // const genreId = term.id;
-      // const genreName = term.name;
-      // console.log(genreName + ' - ' + genreId);
-      this.movie.getMoviesByGenre(term).subscribe(movie => {
-        this.movie = movie;
+      this.movie.getMoviesByGenre(term).subscribe(data => {
+        this.movies = data;
         this.loading = false;
       });
     } else {
@@ -54,7 +60,6 @@ export class SearchComponent implements OnInit {
   }
 
   search(term: string) {
-    // console.log('listado' + term);
     this.loading = true;
     if (term) {
       this.movie.getMovieSearch(term).subscribe((data: any) => {
@@ -68,4 +73,13 @@ export class SearchComponent implements OnInit {
         });
     }
   }
+
+  getMovieVotes() {
+    this.loading = true;
+    this.movie.getMoviesByVotes(term, term2).subscribe(data => {
+        this.movies = data;
+        this.loading = false;
+    });
+  }
+
 }

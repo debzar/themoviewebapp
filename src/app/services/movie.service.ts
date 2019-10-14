@@ -14,7 +14,6 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-
   getQuery(query: string) {
     const url = `https://api.themoviedb.org/3${query}&api_key=${
       this.apikey
@@ -52,12 +51,15 @@ export class MovieService {
       map((data: any) => data.genres)
     );
   }
+
   getMoviesByGenre(term: string) {
-    console.log('lo que llega:' + term);
-    return this.getQuery(`/discover/movie?sort_by=popularity.desc&with_genres=${term}`).pipe(
-      map((data: any) => data.results)
-    );
+    return this.getQuery(`/discover/movie?with_genres=${term}&sort_by=popularity.desc`)
+      .pipe(map((data: any) => data.results));
   }
 
+  getMoviesByVotes(term: string, term2: string) {
+    return this.getQuery(`/discover/movie?vote_average.gte=${term}&vote_average.lte=${term2}&sort_by=vote_average.desc`)
+      .pipe(map((data: any) => data.results));
+  }
 
 }
