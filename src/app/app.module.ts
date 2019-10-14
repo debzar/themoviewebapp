@@ -7,6 +7,10 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app-routing.module';
 
+// Extras
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
+
 // Components
 import { AppComponent } from './app.component';
 import { CardsComponent } from './components/cards/cards.component';
@@ -22,13 +26,14 @@ import { MovieComponent } from './components/movie/movie.component';
     LoadingComponent,
     MovieImagePipe,
     SearchComponent,
-    MovieComponent
+    MovieComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+    NgMultiSelectDropDownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
