@@ -1,3 +1,48 @@
+<!--
 <div class="container m-5">
   <router-outlet></router-outlet>
 </div>
+-->
+<header class="header header-horizontal header-view-pannel">
+  <div class="container">
+    <nav class="navbar">
+      <a class="navbar-brand" href="./">
+                        <span class="logo-element">
+                            <span class="logo-tape">
+                                <span class="svg-content svg-fill-theme" data-svg="./images/svg/logo-part.svg"></span>
+                            </span>
+                            <span class="logo-text text-uppercase">
+                             THE MOVIE LIST WEB
+                            </span>
+                        </span>
+      </a>
+
+      <div class="navbar-collapse">
+        <ul class="navbar-nav">
+
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="after-head d-flex section-text-white position-relative">
+  <div class="d-background" data-image-src="http://via.placeholder.com/1920x1080" data-parallax="scroll"></div>
+  <div class="d-background bg-black-80"></div>
+  <div class="top-block top-inner container">
+    <div class="top-block-content">
+      <h1 class="section-title">Listado de peliculas</h1>
+      <div class="page-breadcrumbs">
+        <a class="content-link" href="#">Inicio</a>
+        <span class="text-theme mx-2"><i class="fas fa-chevron-right"></i></span>
+        <span>Busqueda</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-long">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</section>
