@@ -1,13 +1,38 @@
-<div class="card-columns m-5 animated fadeIn">
-  <div (click)="watchMovie(item)" *ngFor="let item of items" class="card puntero">
-    <img class="card-img-top" [src]="item | movieImage" alt="Card image cap" />
-    <div class="card-body">
-      <h5 class="card-title">{{ item.title }}</h5>
-      <p class="card-text">
-        <span *ngFor="let movie of item.movies" class="badge badge-pill badge-primary">
-          {{ movie.name }}
-        </span>
-      </p>
-    </div>
+<article class="movie-line-entity" (click)="watchMovie(item)" *ngFor="let item of items" >
+  <div class="entity-poster" data-role="hover-wrap">
+
+      <div class="embed-responsive embed-responsive-poster">
+        <img class="embed-responsive-item" [src]="item | movieImage" alt=""/>
+      </div>
+
+      <div class="d-over bg-theme-lighted collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
+        <div class="entity-play">
+          <a class="action-icon-theme action-icon-bordered rounded-circle" href="https://www.youtube.com/watch?v=d96cjJhvlMA" data-magnific-popup="iframe">
+            <span class="icon-content"><i class="fas fa-play"></i></span>
+          </a>
+        </div>
+      </div>
+
   </div>
-</div>
+  <div class="entity-content">
+      <h4 class="entity-title">
+        <a class="content-link" href="movie-info-sidebar-right.html">{{ item.title }}</a>
+      </h4>
+
+      <div class="entity-category">
+        <a class="content-link" href="movies-blocks.html">{{item.release_date}}</a>
+      </div>
+
+      <div class="entity-info">
+        <div class="info-lines">
+          <div class="info info-short">
+            <span class="text-theme info-icon"><i class="fas fa-star"></i></span>
+            <span class="info-text">{{item.vote_average}}</span>
+            <span class="info-rest">/10</span>
+          </div>
+        </div>
+      </div>
+      <p class="text-short entity-text">{{ item.overview }}</p>
+  </div>
+
+</article>
