@@ -3271,3 +3271,13 @@ a.paginator-item:hover {
 .section-text-white .entity-icon {
   color: inherit;
 }
+
+.multiselect-dropdown .dropdown-btn {
+
+  border: none !important;
+  background: rgb(194,194,194);
+  background-image: none;
+  padding: 11px 12px !important;
+  color: #fff !important;
+
+}

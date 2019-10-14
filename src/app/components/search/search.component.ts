@@ -1,6 +1,8 @@
 import {Component, ElementRef, Inject, Input, OnInit, ViewChild} from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import {DOCUMENT} from '@angular/common';
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import {concat} from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -16,15 +18,28 @@ export class SearchComponent implements OnInit {
   @ViewChild('minVote', {static: false}) minVote: ElementRef;
   @ViewChild('maxVote', {static: false}) maxVote: ElementRef;
 
-
+  dropdownList = [];
+  selectedItems = [];
+  dropdownSettings = {};
 
   constructor(private movie: MovieService,  @Inject(DOCUMENT) document) {}
 
   ngOnInit(): void {
     this.getDiscoverMovies();
-    this.getGenres();
-  }
+    this.getGenres(); // call service here
 
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'item_id',
+      textField: 'item_text',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      itemsShowLimit: 3,
+      allowSearchFilter: false,
+      enableCheckAll: false,
+      class: `genre-dropdown`
+    };
+  }
 
   getDiscoverMovies(): void {
     this.movie.getDiscoverMovies().subscribe((data: any) => {
@@ -34,23 +49,20 @@ export class SearchComponent implements OnInit {
   }
 
   getGenres(): void {
+    const tmp = [];
     this.loading = true;
-    this.movie.getGenre().subscribe((data: any) => {
-      // console.log(data);
-      this.genres = data;
-      this.loading = false;
+    this.movie.getGenre().subscribe(data => {
+      for (let i = 0; i < data.length; i++) {
+        tmp.push({ item_id: data[i].id, item_text: data[i].name });
+      }
+      this.dropdownList = tmp;
+
     });
   }
 
-  selectChangeHandler(event: any) {
-    // update the ui
-    this.movieselect = event.target.value;
-    // llamar al servicio y actualizar modelo
-    console.log('categoria: ' + this.movieselect);
-    this.getMovieGenre(this.movieselect.toString());
-  }
   getMovieGenre(term: string) {
     if (term) {
+      console.log(term);
       this.loading = true;
       this.movie.getMoviesByGenre(term).subscribe(data => {
         this.movies = data;
@@ -62,6 +74,12 @@ export class SearchComponent implements OnInit {
         this.loading = false;
       });
     }
+  }
+
+  onItemSelect(item: any) {
+    this.selectedItems.push(item.item_id);
+    const items = this.selectedItems.toString();
+    this.getMovieGenre(items);
   }
 
   search(term: string) {
@@ -82,17 +100,16 @@ export class SearchComponent implements OnInit {
   getMovieVotes() {
     this.loading = true;
     let minVote = this.minVote.nativeElement.value;
-    let maxVote = this.maxVote.nativeElement.value; 
+    let maxVote = this.maxVote.nativeElement.value;
 
     if (maxVote == '') {
-        maxVote = '10'
+        maxVote = '10';
     }
 
     if (minVote == '') {
-        minVote = '0'
+        minVote = '0';
     }
 
-    console.log('min:' + minVote + '-----' + 'max: ' + maxVote);
 
     this.movie.getMoviesByVotes(minVote, maxVote).subscribe(data => {
         this.movies = data;

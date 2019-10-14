@@ -3,15 +3,6 @@
     <div class="col-md-12">
       <form autocomplete="off">
         <div class="row form-grid">
-          <div class="col-sm-6 col-lg-2">
-            <div class="input-view-flat input-group">
-             <!-- generos -->
-              <select (change)="(selectChangeHandler($event))"class="form-control" name="genre" id="genre" data-live-search="true">
-                <option value="" disabled selected>Genero</option>
-                <option [value]="item.id" *ngFor="let item of genres">{{item.name}}</option>
-              </select>
-            </div>
-          </div>
           <div class="col-sm-6 col-lg-4">
             <div class="input-view-flat input-group">
               <div class="col-sm-6">
@@ -22,7 +13,15 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-6">
+          <div class="col-sm-6 col-lg-5">
+            <ng-multiselect-dropdown
+              [placeholder]="'Generos'"
+              [data]="dropdownList"
+              [settings]="dropdownSettings"
+              (onSelect)="onItemSelect($event)">
+            </ng-multiselect-dropdown>
+          </div>
+          <div class="col-sm-6 col-lg-3">
             <input #term type="text" (keyup)="search(term.value)"  class="form-control"  placeholder="Buscar"/>
           </div>
 
