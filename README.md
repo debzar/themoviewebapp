@@ -4,3 +4,5 @@ Para correr la aplicación solo es necesario entrar a la carpeta correspondiente
  
  - npm install
  - ng server --open
+ 
+ En Heroku: https://themoviewebapp.herokuapp.com/
