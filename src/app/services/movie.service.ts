@@ -58,7 +58,7 @@ export class MovieService {
   }
 
   getMoviesByVotes(term: string, term2: string) {
-    return this.getQuery(`/discover/movie?vote_average.gte=${term}&vote_average.lte=${term2}&sort_by=vote_average.desc`)
+    return this.getQuery(`/discover/movie?vote_average.gte=${term}&vote_average.lte=${term2}&sort_by=vote_average.asc`)
       .pipe(map((data: any) => data.results));
   }
 

@@ -6,9 +6,9 @@
           <div class="col-sm-6 col-lg-2">
             <div class="input-view-flat input-group">
              <!-- generos -->
-              <select  class="form-control" name="genre" id="genre" data-live-search="true">
+              <select (change)="(selectChangeHandler($event))"class="form-control" name="genre" id="genre" data-live-search="true">
                 <option value="" disabled selected>Genero</option>
-                <option (click)="getMoviesGenre(item.id)"  *ngFor="let item of genres">{{item.name}}</option>
+                <option [value]="item.id" *ngFor="let item of genres">{{item.name}}</option>
               </select>
             </div>
           </div>
@@ -20,17 +20,17 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-2">
+          <div class="col-sm-6 col-lg-4">
             <div class="input-view-flat input-group">
-              <select class="form-control" name="sortBy">
-                <option selected="true">sort by</option>
-                <option>name</option>
-                <option>release year</option>
-                <option>rating</option>
-              </select>
+              <div class="col-sm-6">
+                <input type="number"  value="0" pattern="[0-9]"id="minVote"  (keyup)="getMovieVotes()"  class="form-control"  placeholder="Voto mayor a"  #minVote/>
+              </div>
+              <div class="col-sm-6">
+                <input type="number"  value="10" pattern="[0-9]"id="maxVote" (keyup)="getMovieVotes()"  class="form-control"  placeholder="Voto menor que"  #maxVote/>
+              </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-6">
+          <div class="col-sm-6 col-lg-4">
             <input #term type="text" (keyup)="search(term.value)"  class="form-control"  placeholder="Buscar"/>
           </div>
 
@@ -39,8 +39,5 @@
     </div>
   </div>
 </div>
-
-
 <app-loading class="m-5" *ngIf="loading"></app-loading>
-
 <app-cards *ngIf="!loading" [items]="movies"></app-cards>

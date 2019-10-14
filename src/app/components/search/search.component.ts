@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Inject, Input, OnInit, ViewChild} from '@angular/core';
 import { MovieService } from '../../services/movie.service';
+import {DOCUMENT} from '@angular/common';
 
 @Component({
   selector: 'app-search',
@@ -12,8 +13,12 @@ export class SearchComponent implements OnInit {
   @Input() items: any[] = [];
   loading: boolean;
   movieselect = '';
+  @ViewChild('minVote', {static: false}) minVote: ElementRef;
+  @ViewChild('maxVote', {static: false}) maxVote: ElementRef;
 
-  constructor(private movie: MovieService) {}
+
+
+  constructor(private movie: MovieService,  @Inject(DOCUMENT) document) {}
 
   ngOnInit(): void {
     this.getDiscoverMovies();
@@ -76,7 +81,20 @@ export class SearchComponent implements OnInit {
 
   getMovieVotes() {
     this.loading = true;
-    this.movie.getMoviesByVotes(term, term2).subscribe(data => {
+    let minVote = this.minVote.nativeElement.value;
+    let maxVote = this.maxVote.nativeElement.value; 
+
+    if (maxVote == '') {
+        maxVote = '10'
+    }
+
+    if (minVote == '') {
+        minVote = '0'
+    }
+
+    console.log('min:' + minVote + '-----' + 'max: ' + maxVote);
+
+    this.movie.getMoviesByVotes(minVote, maxVote).subscribe(data => {
         this.movies = data;
         this.loading = false;
     });
