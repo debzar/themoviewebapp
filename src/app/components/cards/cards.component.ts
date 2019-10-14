@@ -14,7 +14,6 @@ export class CardsComponent {
 
   watchMovie(item: any) {
     let movieId;
-
     movieId = item.id;
     this.router.navigate(['/movie', movieId]);
   }

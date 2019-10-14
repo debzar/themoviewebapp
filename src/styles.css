@@ -29,8 +29,8 @@
 26. Status
 
 [Typography]
-Font families: Open Sans, Oswald
-    Oswald - used for headings, main elements
+Font families: Open Sans, fantasy
+    fantasy - used for headings, main elements
     Open Sans - for generic textes
 Text default color: #666666
 Theme colors: #FF8A00
@@ -180,10 +180,7 @@ body {
   margin-bottom: 1rem;
 }
 .grid-md {
-  margin-top: -0.625rem;
-  margin-bottom: -0.625rem;
-  margin-left: -0.625rem;
-  margin-right: -0.625rem;
+  margin: -0.625rem;
 }
 .grid-md > .col,
 .grid-md > [class*="col-"] {
@@ -220,7 +217,7 @@ ul {
 .display-2,
 .display-3,
 .display-4 {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
 }
 b,
 strong,
@@ -272,7 +269,7 @@ strong,
   margin-right: 2rem;
 }
 .list-categories {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-weight: 500;
   line-height: 1.2;
   color: #333;
@@ -358,7 +355,6 @@ a:hover {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
@@ -416,7 +412,6 @@ a:hover {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
     display: flex;
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
@@ -447,7 +442,6 @@ a:hover {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
     display: flex;
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
@@ -478,7 +472,6 @@ a:hover {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
     display: flex;
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
@@ -509,7 +502,6 @@ a:hover {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
     display: flex;
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
@@ -678,7 +670,6 @@ a:hover {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   min-height: 3rem;
   -webkit-box-pack: center;
@@ -704,14 +695,14 @@ a:hover {
   padding-left: 2.5rem;
 }
 .section-title {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   line-height: 1.2;
   font-weight: 500;
   font-size: 2.25rem;
   color: #333;
 }
 .section-main-text {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   line-height: 1.2;
   font-weight: 300;
   font-size: 3rem;
@@ -794,7 +785,7 @@ a:hover {
     [7. Form]
 */
 .form-title {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-weight: 500;
   color: #333;
   line-height: 1.2;
@@ -866,7 +857,6 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   -webkit-box-direction: reverse;
   -moz-box-direction: reverse;
@@ -961,7 +951,6 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   -webkit-box-align: center;
   -moz-box-align: center;
@@ -1130,7 +1119,7 @@ textarea.form-control {
   font-size: 0.875rem;
   line-height: 1.5rem;
   padding: 0.5rem 1.25rem;
-  font-family: 'Oswald';
+  font-family: 'fantasy';
 }
 .btn-sm,
 .btn-group-sm > .btn {
@@ -1285,7 +1274,6 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
@@ -1313,7 +1301,7 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
+
   display: flex;
   margin: 0 -0.5rem;
 }
@@ -1324,7 +1312,7 @@ textarea.form-control {
   line-height: 1.2;
 }
 .info-title {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-weight: 500;
 }
 .info-list {
@@ -1338,7 +1326,7 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
+
   display: flex;
 }
 .info-row .info-title {
@@ -1371,7 +1359,7 @@ textarea.form-control {
 */
 .logo-element {
   position: relative;
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-weight: 500;
   display: inline-block;
   line-height: 1.2em;
@@ -1411,7 +1399,7 @@ textarea.form-control {
 /* Horizontal header */
 .header-horizontal {
   width: 100%;
-  font-family: 'Oswald';
+  font-family: 'fantasy';
 }
 .header-horizontal + .after-head .top-block {
   padding-top: 4.5rem;
@@ -1429,7 +1417,7 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
+
   display: flex;
   padding: 0;
   -webkit-box-align: center;
@@ -1599,7 +1587,6 @@ textarea.form-control {
     display: -moz-box !important;
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
-    display: box !important;
     display: flex !important;
     -webkit-flex-basis: auto;
     flex-basis: auto;
@@ -1780,7 +1767,7 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
+
   display: flex;
   padding: 0;
   -webkit-box-align: center;
@@ -1806,7 +1793,7 @@ textarea.form-control {
 }
 .footer-title {
   line-height: 1.2;
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-size: 1.25rem;
   margin-top: 1.25rem;
 }
@@ -1836,7 +1823,7 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
+
   display: flex;
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
@@ -1860,7 +1847,7 @@ textarea.form-control {
 .top-block-head {
   padding-top: 6rem;
   padding-bottom: 3rem;
-  font-family: 'Oswald';
+  font-family: 'fantasy';
 }
 .top-block-content {
   padding-top: 6rem;
@@ -1922,7 +1909,7 @@ textarea.form-control {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
+
     display: flex;
     margin-left: -1rem;
     margin-right: -1rem;
@@ -1968,7 +1955,7 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
+
   display: flex;
   -webkit-box-align: stretch;
   -moz-box-align: stretch;
@@ -2092,7 +2079,7 @@ textarea.form-control {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
+
   display: flex;
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
@@ -2405,13 +2392,13 @@ a.paginator-item:hover {
     [21. Entity]
 */
 .entity-title {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-weight: 500;
   color: #333;
   line-height: 1.2;
 }
 .entity-subtitle {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-weight: 400;
   line-height: 1.2;
 }
@@ -2423,7 +2410,7 @@ a.paginator-item:hover {
   line-height: 1.2;
 }
 .entity-info {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   margin-top: 0.75rem;
   font-size: 0.875rem;
   color: #333;
@@ -2444,7 +2431,7 @@ a.paginator-item:hover {
   color: #999;
 }
 .entity-extra {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   line-height: 1.2;
   color: #999;
 }
@@ -2463,7 +2450,7 @@ a.paginator-item:hover {
   color: #fff;
 }
 .entity-actions {
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-weight: 400;
   font-size: 1rem;
   margin-top: 1.25rem;
@@ -2535,7 +2522,6 @@ a.paginator-item:hover {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   margin-left: -0.125rem;
   margin-right: -0.125rem;
@@ -2558,7 +2544,6 @@ a.paginator-item:hover {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
@@ -2627,7 +2612,6 @@ a.paginator-item:hover {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
     display: flex;
     -webkit-box-orient: horizontal;
     -moz-box-orient: horizontal;
@@ -2750,7 +2734,6 @@ a.paginator-item:hover {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
     display: flex;
   }
   .movie-tape-playlist .slick-view-vertical .slick-track {
@@ -2817,7 +2800,6 @@ a.paginator-item:hover {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
@@ -2842,7 +2824,6 @@ a.paginator-item:hover {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
     display: flex;
     -webkit-box-orient: horizontal;
     -moz-box-orient: horizontal;
@@ -2933,7 +2914,6 @@ a.paginator-item:hover {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
@@ -2984,7 +2964,6 @@ a.paginator-item:hover {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
     display: flex;
     -webkit-box-orient: horizontal;
     -moz-box-orient: horizontal;
@@ -3053,7 +3032,7 @@ a.paginator-item:hover {
   position: absolute;
   right: 1.25rem;
   bottom: 1.25rem;
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-size: 0.875rem;
 }
 .article-tape-entity .entity-date .tape-content {
@@ -3094,7 +3073,7 @@ a.paginator-item:hover {
   position: absolute;
   right: 1.25rem;
   bottom: 1.25rem;
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-size: 0.875rem;
 }
 .article-line-entity .entity-date .tape-content {
@@ -3106,7 +3085,6 @@ a.paginator-item:hover {
     display: -moz-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: box;
     display: flex;
     -webkit-box-orient: horizontal;
     -moz-box-orient: horizontal;
@@ -3146,7 +3124,6 @@ a.paginator-item:hover {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
@@ -3242,7 +3219,6 @@ a.paginator-item:hover {
   display: -moz-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: box;
   display: flex;
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
@@ -3266,7 +3242,7 @@ a.paginator-item:hover {
 }
 .status-entity .entity-icon {
   font-size: 8rem;
-  font-family: 'Oswald';
+  font-family: 'fantasy';
   font-weight: 300;
   color: #333;
   margin-bottom: 3rem;

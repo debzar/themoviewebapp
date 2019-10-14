@@ -46,4 +46,18 @@ export class MovieService {
       map((data: any) => data)
     );
   }
+
+  getGenre() {
+    return this.getQueryforMovie('/genre/movie/list').pipe(
+      map((data: any) => data.genres)
+    );
+  }
+  getMoviesByGenre(term: string) {
+    console.log('lo que llega:' + term);
+    return this.getQuery(`/discover/movie?sort_by=popularity.desc&with_genres=${term}`).pipe(
+      map((data: any) => data.results)
+    );
+  }
+
+
 }

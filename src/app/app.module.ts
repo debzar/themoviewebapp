@@ -15,7 +15,6 @@ import { MovieImagePipe } from './pipes/movie-image.pipe';
 import { SearchComponent } from './components/search/search.component';
 import { MovieComponent } from './components/movie/movie.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

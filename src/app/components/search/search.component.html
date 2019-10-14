@@ -5,27 +5,10 @@
         <div class="row form-grid">
           <div class="col-sm-6 col-lg-2">
             <div class="input-view-flat input-group">
-              <select class="form-control" name="genre">
-                <option selected="true">Genero</option>
-                <option>Acción</option>
-                <option>Aventura</option>
-                <option>Comedia</option>
-                <option>Crimen</option>
-                <option>Detective</option>
-                <option>drama</option>
-                <option>Fantasia</option>
-                <option>Melodrama</option>
-                <option>Romance</option>
-                <option>Superheroes</option>
-                <option>Supernatural</option>
-                <option>Thriller</option>
-                <option>Deportes</option>
-                <option>Historia</option>
-                <option>Horror</option>
-                <option>Musica</option>
-                <option>Sci-fi</option>
-                <option>Guerra</option>
-                <option>Oeste</option>
+             <!-- generos -->
+              <select  class="form-control" name="genre" id="genre" data-live-search="true">
+                <option value="" disabled selected>Genero</option>
+                <option (click)="getMoviesGenre(item.id)"  *ngFor="let item of genres">{{item.name}}</option>
               </select>
             </div>
           </div>

@@ -21,7 +21,7 @@ export class MovieComponent {
 
       this.happymovie.getMovie(params['id'])
         .subscribe(movie => {
-          console.log(movie);
+          //console.log(movie);
           this.movie = movie;
           this.loadingMovie = false;
         })
